@@ -44,7 +44,7 @@
             <nav>
                 <div></div>
                 <div>
-                    <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <a class="setting-btn" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <span class="material-symbols-outlined">settings</span>
                     </a>
                 </div>
@@ -382,13 +382,9 @@
 
 
     <!-- Settings Modal -->
-    <style>
-        .modal .modal-dialog{
-            color:black;
-        }
-    </style>
+
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel" style="color:black;">설정</h5>
@@ -397,8 +393,11 @@
             <div class="modal-body">
               <form>
                 <div class="mb-3">
-                  <label for="recipient-name" class="col-form-label"  style="color:black;">테마 :</label>
-                  <input type="text" class="form-control" id="recipient-name">
+                  <label for="recipient-name" class="col-form-label"  style="color:black;">배경선택 :</label>
+                  <div>
+                    <input type="checkbox"  id="bg01">
+                    <label for="bg01"   style="color:black;">배경01</label>
+                  </div>
                 </div>
                 <div class="mb-3">
                   <label for="message-text" class="col-form-label"  style="color:black;">Message:</label>
@@ -407,8 +406,8 @@
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Send message</button>
+              <button type="button" class="btn btn-primary">변경</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
             </div>
           </div>
         </div>
