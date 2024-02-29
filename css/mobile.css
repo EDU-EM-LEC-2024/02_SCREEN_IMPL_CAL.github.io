@@ -145,6 +145,7 @@ body{
     display:flex;
     justify-content:space-between;
     align-items: center;
+    background-color: transparent;
     width : 100%;
 }
 
@@ -162,7 +163,8 @@ body{
     font-size:2vw;
     /* border :1px solid; */
     
-    
+    background-color: transparent;
+
 
     text-align:center;
     flex-grow: 1;
