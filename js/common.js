@@ -226,13 +226,20 @@ function addSchdule(tds,color){
         
         if(idx%4==0){
             //01
+
             const divEl =  document.createElement('div');
-            divEl.setAttribute('style',"width:100%;height:30px;border-top:1px solid;border-bottom:1px solid;margin-bottom:5px;display:flex;align-items:center;justify-content:left;")
             const labelEl = document.createElement('div');
-            labelEl.setAttribute('style',`width:15px;height:100%;background-color:${color};margin-right:10px;`)
             const contentEl =document.createElement('div');
-            contentEl.setAttribute('style','font-size:.7rem');
             contentEl.innerHTML="내용"
+            if(window.outerWidth>=400){
+                divEl.setAttribute('style',"width:100%;height:30px;border-top:1px solid;border-bottom:1px solid;margin-bottom:5px;display:flex;align-items:center;justify-content:left;")
+                labelEl.setAttribute('style',`width:15px;height:100%;background-color:${color};margin-right:10px;`)
+                contentEl.setAttribute('style','font-size:.7rem');
+            }else{
+                divEl.setAttribute('style',"width:100%;height:15px;border-top:1px solid;border-bottom:1px solid;margin-bottom:5px;display:flex;align-items:center;justify-content:left;")
+                labelEl.setAttribute('style',`width:5px;height:100%;background-color:${color};margin-right:10px;`)
+                contentEl.setAttribute('style','font-size:.4rem');
+            }
             divEl.appendChild(labelEl);
             divEl.appendChild(contentEl);
             td.appendChild(divEl);
