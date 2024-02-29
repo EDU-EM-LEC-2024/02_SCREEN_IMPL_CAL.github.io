@@ -146,9 +146,18 @@ body{
     justify-content:space-between;
     align-items: center;
     width : 100%;
-    
-    
 }
+
+.wrapper>main>section>.top>.left>.weeklyweather>.items::-webkit-scrollbar{
+    width:300px;
+    height:2px;
+    background-color: transparent;
+}
+.wrapper>main>section>.top>.left>.weeklyweather>.items::-webkit-scrollbar-thumb{
+    background-color: lightgray; 
+}
+
+
 .wrapper>main>section>.top>.left>.weeklyweather>.items>.item{
     font-size:2vw;
     /* border :1px solid; */
