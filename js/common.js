@@ -5,6 +5,32 @@ window.addEventListener('resize', function(){
     console.log('outer width : ' +window.outerWidth);    
 });
 
+//-----------------------------
+// 시간 표시
+//-----------------------------
+setInterval(()=>{
+    const today = new Date();
+    let hour = today.getHours();
+    let min = today.getMinutes();
+    if(min<10)
+        min = "0" + min;
+    
+    const timeEl = document.querySelector('.top .left .curdate .time');
+
+    timeEl.innerHTML = `${hour}:${min}`;
+
+},1000);
+
+//-----------------------------
+// 위치 확인
+//-----------------------------
+navigator.geolocation.getCurrentPosition((position) => {
+	console.log("position",position)
+});
+
+
+
+
 // 
 const wedding_date = new Date();
 const wedding_hours = "null";
@@ -19,7 +45,7 @@ const cal_calender = (wedding_date,time)=>{
     var calendarToday = wedding_date.getDate();             // 달력 일
     
     //마지막 일자 구하기
-    var monthLastDate = new Date(2022, calendarMonth-1, 0).getDate();
+    var monthLastDate = new Date(calendarYear, calendarMonth, 0).getDate();
     //날짜를 기준으로 월의 시작 요일 구하기
     var monthStartDay = new Date(calendarYear, calendarMonth-1, 1);
     
@@ -32,7 +58,7 @@ const cal_calender = (wedding_date,time)=>{
     console.log("START YOIL : ",calendarMonthStartDay); //월요일기준으로 1 - 6(토) ,0(일)
 
 
-    //월을 넣기
+    //달력에 월 넣기
     const monthEl = document.querySelector('.calmonth');
     monthEl.innerHTML = calendarMonth+"월";
 
@@ -51,34 +77,37 @@ const cal_calender = (wedding_date,time)=>{
 
 
     // ///01SECTION 헤더 요일 랜더링
-    // const yoilEl = document.querySelector('.wrapper nav>div:nth-child(2)')
-    // if(yoil==0)
-    //     yoilEl.innerHTML = 'SUNDAY';
-    // else if(yoil==1)
-    //     yoilEl.innerHTML = 'MONDAY';
-    // else if(yoil==2)
-    //     yoilEl.innerHTML = 'TUESDAY';
-    // else if(yoil==3)
-    //     yoilEl.innerHTML = 'WEDNESDAY';
-    // else if(yoil==4)
-    //     yoilEl.innerHTML = 'THURSDAY';
-    // else if(yoil==5)
-    //     yoilEl.innerHTML = 'FRIDAY';
-    // else if(yoil==6)
-    //     yoilEl.innerHTML = 'SATURDAY';
+     const yoilEl = document.querySelector('.wrapper .curdate>.yoil')
+     if(yoil==0)
+         yoilEl.innerHTML = 'SUNDAY';
+     else if(yoil==1)
+         yoilEl.innerHTML = 'MONDAY';
+     else if(yoil==2)
+         yoilEl.innerHTML = 'TUESDAY';
+     else if(yoil==3)
+         yoilEl.innerHTML = 'WEDNESDAY';
+     else if(yoil==4)
+         yoilEl.innerHTML = 'THURSDAY';
+     else if(yoil==5)
+         yoilEl.innerHTML = 'FRIDAY';
+     else if(yoil==6)
+         yoilEl.innerHTML = 'SATURDAY';
+        
 
-    // ///01SECTION DATETIME에 연월일 요일 랜더링
-    // const section01DatetimeEl = document.querySelector('.wrapper>main>section:nth-child(1) .datetime');
-    // section01DatetimeEl.innerHTML = calendarYear+" 년 ";
-    // if(calendarMonth<10)
-    // section01DatetimeEl.innerHTML += "0"+calendarMonth+" 월 ";
-    // else
-    // section01DatetimeEl.innerHTML += calendarMonth+" 월 ";
+    //월 / 일 입력
+    
+    
+    const mEl = document.querySelector('.wrapper .curdate .month')
+    if(calendarMonth<10)
+        mEl.innerHTML = "0"+calendarMonth;
+    else
+        mEl.innerHTML = calendarMonth;
 
-    // if(d_day<10)
-    // section01DatetimeEl.innerHTML += "0"+d_day+" 일 ";
-    // else
-    // section01DatetimeEl.innerHTML += d_day +" 일 ";   
+    const dayEl = document.querySelector('.wrapper .curdate .day')
+    if(d_day<10)
+        dayEl.innerHTML = "0"+d_day;
+    else
+        dayEl.innerHTML = d_day;  
 
     // const section01HoursEl = document.querySelector('.wrapper>main>section:nth-child(1) .bottom .hours');
     // section01HoursEl.innerHTML= time;
@@ -143,6 +172,8 @@ const cal_calender = (wedding_date,time)=>{
         
             day++;
         })   
+
+
     // // D-DAY 표시(classname : d-day)
     // const tdEls =  document.querySelectorAll("..wrapper>main>section>.body table td");
     // tdEls.forEach(tdEl=>{
