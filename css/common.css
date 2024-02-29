@@ -159,7 +159,15 @@ body{
     align-items: center;
     width : 100%;
     
-    
+    overflow:auto;
+}
+.wrapper>main>section>.top>.left>.weeklyweather>.items::-webkit-scrollbar{
+    width:300px;
+    height:5px;
+    background-color: transparent;
+}
+.wrapper>main>section>.top>.left>.weeklyweather>.items::-webkit-scrollbar-thumb{
+    background-color: lightgray; 
 }
 .wrapper>main>section>.top>.left>.weeklyweather>.items>.item{
     font-size:2vw;
@@ -217,8 +225,38 @@ body{
 }
 .wrapper>main>section>.top>.left>.weeklyweather>.items>.item>.body>.temp-maxmin{
     
-    font-size:1.8vw;
+    font-size:1.3vw;
     padding : .5vh 0;
+    
+}
+.wrapper>main>section>.top>.left>.weeklyweather>.items>.item>.body>.temp-maxmin>div{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper>main>section>.top>.left>.weeklyweather>.items>.item>.body>.temp-maxmin>div>span{
+    display:relative;
+    margin: 5px;
+}
+.wrapper>main>section>.top>.left>.weeklyweather>.items>.item>.body>.temp-maxmin>div>span:nth-child(1)::before{
+    content:'MAX';
+    display:block;
+    
+   
+    position:relative;
+    font-size : .7rem;
+    
+    position:relative;
+    left:0px;
+    top:0px;
+}
+.wrapper>main>section>.top>.left>.weeklyweather>.items>.item>.body>.temp-maxmin>div>span:nth-child(2)::before{
+    content:'MIN';
+    display:block;
+   
+   
+    position:relative;
+    font-size : .7rem;
 }
 
 .wrapper>main>section>.top>.right{
@@ -228,9 +266,14 @@ body{
     /* border : 2px solid green; */
     overflow:auto;
 }
+
+
+
 .wrapper>main>section>.top>.right::-webkit-scrollbar{
     display:none;
 }
+
+
 
 .wrapper>main>section>.top>.right>.top{
     display:flex;
