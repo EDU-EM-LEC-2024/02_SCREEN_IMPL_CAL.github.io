@@ -1,5 +1,5 @@
 *{
-   color:black;
+   color:white;
 }
 body{
    margin : 0px;
@@ -7,6 +7,7 @@ body{
    width:100vw;
    height:100vh;
    position:relative;
+   
 }
 
 .bg{
@@ -18,16 +19,16 @@ body{
    
     z-index:-1;
     opacity: 1;
-    background-repeat: no-repeat;
-    background-size:cover;
-    opacity: .8;
+    /* background-repeat: no-repeat; */
+    object-fit: cover;
+   
     
 }
 
 
 .wrapper{
-        width : 1280px;
-        height : 768px;
+        width : 85.8889vw;
+        height : 85.333vh;
         margin : 0 auto;
 }
 
@@ -64,13 +65,13 @@ body{
     border-bottom : 1px solid;
 }
 .wrapper>main>section>.top>.left>.curdate>div:nth-child(1){
-    font-size : 5rem;
+    font-size : 4.167vw;
 }
 .wrapper>main>section>.top>.left>.curdate>div:nth-child(2){
-    font-size:2.5rem;
+    font-size:2.083vw;
 }
 .wrapper>main>section>.top>.left>.curdate>div:nth-child(3){
-    font-size:1.5rem;
+    font-size:1.25vw;
 }
 .wrapper>main>section>.top>.left>.curweather{
     height : 12.5vh;
@@ -86,7 +87,7 @@ body{
 
 }
 .wrapper>main>section>.top>.left>.curweather>.icon>.material-symbols-outlined{
-    font-size : 5rem;
+    font-size : 4.167vw;
     font-variation-settings:
     'FILL' 0,
     'wght' 300,
@@ -95,7 +96,7 @@ body{
 
 }
 .wrapper>main>section>.top>.left>.curweather>.icon>.temp{
-    font-size:3rem;
+    font-size:2.5vw;
     margin-left:10px;
 }
 
@@ -114,7 +115,7 @@ body{
     
 }
 .wrapper>main>section>.top>.left>.weeklyweather>.items>.item{
-    font-size:.8rem;
+    font-size:0.667vw;
     /* border :1px solid; */
     margin-right:25px;
     text-align:center;
@@ -122,7 +123,7 @@ body{
     
 }
 .wrapper>main>section>.top>.left>.weeklyweather>.items>.item>.top{
-    width:100px;
+    width:8.111vw;
     border : 1px solid;
     margin-bottom:2px;
 }
@@ -137,7 +138,7 @@ body{
 
 }
 .wrapper>main>section>.top>.left>.weeklyweather>.items>.item>.body>.icon>.material-symbols-outlined{
-    font-size:3rem;
+    font-size:2.5vw;
     font-variation-settings:
     'FILL' 0,
     'wght' 200,
@@ -152,7 +153,7 @@ body{
     display:flex;
     justify-content: space-evenly;
     align-items: center;
-    font-size:1rem;
+    font-size:0.833vw;
     
 }
 .wrapper>main>section>.top>.left>.weeklyweather>.items>.item>.body>.temp-maxmin{
@@ -187,11 +188,11 @@ body{
     margin-right:20px;
 }
 .wrapper>main>section>.top>.right>.top>.yoil>.day{
-    font-size:2.8rem;
+    font-size:2.333vw;
     margin-right:20px;
 }
 .wrapper>main>section>.top>.right>.top>.yoil>.today{
-    font-size :1.8rem;
+    font-size :1.5vw;
 }
 .wrapper>main>section>.top>.right>.top>.icon{
     
@@ -200,11 +201,11 @@ body{
     align-items: center;
 
     height:100%;
-    font-size:1.5rem;
+    font-size:1.25vw;
     margin-right:20px;
 }
 .wrapper>main>section>.top>.right>.top>.icon>.material-symbols-outlined{
-    font-size:2.5rem;
+    font-size:2.083vw;
     margin-right:10px;
     font-variation-settings:
     'FILL' 0,
@@ -214,13 +215,13 @@ body{
 
 }
 .wrapper>main>section>.top>.right>.top>.icon>.temp{
-    font-size : 1.5rem;
+    font-size : 1.25vw;
     font-weight: 600;
 
 }
 .wrapper>main>section>.top>.right>.top>.temp-maxmin{
     height : 100%;
-    font-size : 1rem;
+    font-size : 0.833vw;
     font-weight: 600;
     display:flex;
     justify-content: center;
@@ -252,11 +253,11 @@ body{
 
 }
 .wrapper>main>section>.top>.right>.body>.items>.item>.weather-info>.date>.day{
-    font-size : 3rem;
+    font-size : 2.75vw;
     margin:15px;
 }
 .wrapper>main>section>.top>.right>.body>.items>.item>.weather-info>.date>.today{
-    font-size : 2rem;
+    font-size : 2vw;
 }
 
 .wrapper>main>section>.top>.right>.body>.items>.item>.weather-info>.icon{
@@ -271,11 +272,11 @@ body{
     'wght' 200,
     'GRAD' 0,
     'opsz' 24;
-    font-size:3.5rem;;
+    font-size:3.375vw;;
     margin-right:20px;
 }
 .wrapper>main>section>.top>.right>.body>.items>.item>.weather-info>.icon>.temp{
-    font-size : 1.5rem;
+    font-size : 1.4vw;
 }
 
 
@@ -291,7 +292,7 @@ body{
     align-items: center;
     margin-bottom:10px;
 
-    font-size:1.2rem;
+    font-size:1.2vw;
  
 }
 .wrapper>main>section>.top>.right>.body>.items>.item>.schdule-block>.schdule>*{
@@ -302,6 +303,12 @@ body{
     height : 100%;
     background-color: red;
 }
+
+.wrapper>main>section>.top>.right>.body>.items>.item>.schdule-block>.schdule:nth-child(2)>.label{
+    background-color: green;
+}
+
+
 .wrapper>main>section>.top>.right>.body>.items>.item>.schdule-block>.schdule>.time{}
 .wrapper>main>section>.top>.right>.body>.items>.item>.schdule-block>.schdule>.description{}
 
