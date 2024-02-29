@@ -224,7 +224,7 @@ function addSchdule(tds,color){
 
     tds.forEach((td,idx)=>{
         
-        if(idx%4==0){
+        if(idx%4==0 && td.innerHTML!=''){
             //01
 
             const divEl =  document.createElement('div');
@@ -244,6 +244,7 @@ function addSchdule(tds,color){
             divEl.appendChild(contentEl);
             td.appendChild(divEl);
         }
+
 
     })
 }
