@@ -117,13 +117,13 @@ body{
 .wrapper>main>section>.top>.left>.weeklyweather>.items>.item{
     font-size:0.667vw;
     /* border :1px solid; */
-    margin-right:25px;
+    margin-right:1.5vw;
     text-align:center;
     
     
 }
 .wrapper>main>section>.top>.left>.weeklyweather>.items>.item>.top{
-    width:8.111vw;
+    width:7.111vw;
     border : 1px solid;
     margin-bottom:2px;
 }
@@ -156,8 +156,12 @@ body{
     font-size:0.833vw;
     
 }
+.wrapper>main>section>.top>.left>.weeklyweather>.items>.item>.body>.rain .material-symbols-outlined{
+    font-size:1vw;
+}
 .wrapper>main>section>.top>.left>.weeklyweather>.items>.item>.body>.temp-maxmin{
     border : 1px solid;
+    font-size:0.833vw;
 }
 
 .wrapper>main>section>.top>.right{
@@ -185,11 +189,11 @@ body{
     align-items: center;
 
     height:100%;
-    margin-right:20px;
+    margin-right:1.010101010101vw;
 }
 .wrapper>main>section>.top>.right>.top>.yoil>.day{
     font-size:2.333vw;
-    margin-right:20px;
+    margin-right:1.010101010101vw;
 }
 .wrapper>main>section>.top>.right>.top>.yoil>.today{
     font-size :1.5vw;
@@ -202,11 +206,11 @@ body{
 
     height:100%;
     font-size:1.25vw;
-    margin-right:20px;
+    margin-right:1.010101010101vw;;
 }
 .wrapper>main>section>.top>.right>.top>.icon>.material-symbols-outlined{
     font-size:2.083vw;
-    margin-right:10px;
+    margin-right:0.5vw;
     font-variation-settings:
     'FILL' 0,
     'wght' 200,
