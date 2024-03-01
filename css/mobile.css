@@ -118,7 +118,7 @@ body{
 
 }
 .wrapper>main>section>.top>.left>div>.curweather>.icon>.material-symbols-outlined{
-    font-size : 10.167vw;
+    font-size : 8.167vw;
     font-variation-settings:
     'FILL' 0,
     'wght' 300,
@@ -127,7 +127,7 @@ body{
 
 }
 .wrapper>main>section>.top>.left>div>.curweather>.icon>.temp{
-    font-size:4.5vw;
+    font-size:3.2vw;
     margin-left:10px;
 }
 
