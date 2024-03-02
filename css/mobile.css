@@ -18,7 +18,7 @@ body{
     height:100vh;
    
     z-index:-1;
-    opacity: 1;
+ 
     /* background-repeat: no-repeat; */
     object-fit: cover;
    
@@ -27,7 +27,7 @@ body{
 
 
 .wrapper{
-        width : 350px;
+        width : 100vw;
         height : 100vh;
         margin: 0 auto;
         padding :2vw;
@@ -41,7 +41,22 @@ body{
 .wrapper>header{}
 .wrapper>header>.top-header{}
 .wrapper>header>nav{
+    height:25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding : 0 1.2vw;
+}
 
+.wrapper>header>nav .setting-btn{
+    width : 35px;
+    height : 35px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  
+    
 }
 .wrapper>header>nav .material-symbols-outlined{
     font-variation-settings:
@@ -50,10 +65,7 @@ body{
     'GRAD' 0,
     'opsz' 24;
 
-    font-size:1rem;
-}
-.modal{
-      
+    font-size:2rem;
 }
 
 
@@ -83,7 +95,7 @@ body{
    
     justify-content: space-between;
     border-bottom : 1px solid ;
-    height : 135px;
+    height : 400px;
     /* border : 1px solid; */
 }
 .wrapper>main>section>.top>.left>div>.curdate{
@@ -118,7 +130,7 @@ body{
 
 }
 .wrapper>main>section>.top>.left>div>.curweather>.icon>.material-symbols-outlined{
-    font-size : 8.167vw;
+    font-size : 10.167vw;
     font-variation-settings:
     'FILL' 0,
     'wght' 300,
@@ -127,7 +139,7 @@ body{
 
 }
 .wrapper>main>section>.top>.left>div>.curweather>.icon>.temp{
-    font-size:3.2vw;
+    font-size:4.5vw;
     margin-left:10px;
 }
 
@@ -137,7 +149,7 @@ body{
     padding-left:0px;
     border-top : 1px solid;
     
-    height : 150px;
+    height : 300px;
    
     
 }
@@ -145,26 +157,24 @@ body{
     display:flex;
     justify-content:space-between;
     align-items: center;
-    background-color: transparent;
     width : 100%;
+    
+    overflow-x:auto;
+    overflow-y:hidden;
 }
-
 .wrapper>main>section>.top>.left>.weeklyweather>.items::-webkit-scrollbar{
-    width:300px;
-    height:2px;
+    width : 300px;
+    height:5px;
     background-color: transparent;
 }
 .wrapper>main>section>.top>.left>.weeklyweather>.items::-webkit-scrollbar-thumb{
     background-color: lightgray; 
 }
-
-
 .wrapper>main>section>.top>.left>.weeklyweather>.items>.item{
     font-size:2vw;
     /* border :1px solid; */
     
-    background-color: transparent;
-
+    
 
     text-align:center;
     flex-grow: 1;
@@ -216,20 +226,55 @@ body{
 }
 .wrapper>main>section>.top>.left>.weeklyweather>.items>.item>.body>.temp-maxmin{
     
-    font-size:1.8vw;
+    font-size:1.3vw;
     padding : .5vh 0;
+    
+}
+.wrapper>main>section>.top>.left>.weeklyweather>.items>.item>.body>.temp-maxmin>div{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper>main>section>.top>.left>.weeklyweather>.items>.item>.body>.temp-maxmin>div>span{
+    display:relative;
+    margin: 5px;
+}
+.wrapper>main>section>.top>.left>.weeklyweather>.items>.item>.body>.temp-maxmin>div>span:nth-child(1)::before{
+    content:'MAX';
+    display:block;
+    
+   
+    position:relative;
+    font-size : .7rem;
+    
+    position:relative;
+    left:0px;
+    top:0px;
+}
+.wrapper>main>section>.top>.left>.weeklyweather>.items>.item>.body>.temp-maxmin>div>span:nth-child(2)::before{
+    content:'MIN';
+    display:block;
+   
+   
+    position:relative;
+    font-size : .7rem;
 }
 
 .wrapper>main>section>.top>.right{
-    width:40%;
-    height:300px;
+    width:45%;
+    height:700px;
     /* border : 1px solid; */
     /* border : 2px solid green; */
     overflow:auto;
 }
+
+
+
 .wrapper>main>section>.top>.right::-webkit-scrollbar{
     display:none;
 }
+
+
 
 .wrapper>main>section>.top>.right>.top{
     display:flex;
@@ -246,15 +291,14 @@ body{
     align-items: center;
 
     height:100%;
-    margin-right:10px;
+    margin-right:2.010101010101vw;
 }
 .wrapper>main>section>.top>.right>.top>.yoil>.day{
-    font-size:1vw;
+    font-size:2.333vw;
     margin-right:1.010101010101vw;
-    
 }
 .wrapper>main>section>.top>.right>.top>.yoil>.today{
-    font-size :2.5vw;
+    font-size :1.5vw;
 }
 .wrapper>main>section>.top>.right>.top>.icon{
     
@@ -304,9 +348,9 @@ body{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    height : 35px;
+    height:100px;
     border-bottom : 1px solid;
-    margin-bottom : 5px;   
+    margin-bottom : 20px;   
 }
 .wrapper>main>section>.top>.right>.body>.items>.item>.weather-info>.date{
     height : 100%;
@@ -315,15 +359,11 @@ body{
 
 }
 .wrapper>main>section>.top>.right>.body>.items>.item>.weather-info>.date>.day{
-    font-size : .7rem;
-    width : 100%;
-   
-    
+    font-size : 4.75vw;
+    margin:15px;
 }
 .wrapper>main>section>.top>.right>.body>.items>.item>.weather-info>.date>.today{
-    font-size : .7rem;
-    
-    width : 100%;
+    font-size : 3vw;
 }
 
 .wrapper>main>section>.top>.right>.body>.items>.item>.weather-info>.icon{
@@ -338,63 +378,51 @@ body{
     'wght' 200,
     'GRAD' 0,
     'opsz' 24;
-    font-size:1.5rem;
-    margin-right:5px;
+    font-size:3.375vw;;
+    margin-right:20px;
 }
 .wrapper>main>section>.top>.right>.body>.items>.item>.weather-info>.icon>.temp{
-    font-size : 1rem;
-    display:none;
+    font-size : 1.4vw;
 }
 
 
 .wrapper>main>section>.top>.right>.body>.items>.item>.weather-info>.temp{}
 .wrapper>main>section>.top>.right>.body>.items>.item>.schdule-block{
-   
-   
+
 }
 .wrapper>main>section>.top>.right>.body>.items>.item>.schdule-block>.schdule{
-  
-    height:25px;
-    font-size:1.2vw;
     
+    height:50px;
     display:flex;
-    justify-content: center;
-    
-    overflow: auto;
+    justify-content: left;
+    align-items: center;
+    margin-bottom:10px;
+
+    font-size:1.2vw;
+ 
 }
 
 .wrapper>main>section>.top>.right>.body>.items>.item>.schdule-block>.schdule>*{
-    
+    margin-right:50px;
 }
 .wrapper>main>section>.top>.right>.body>.items>.item>.schdule-block>.schdule>.label{
-    width:5px;
-    height:25px;
+    width:3px;
+    height : 100%;
     background-color: red;
-    margin-right : 0 !important;
-    
 }
 
 .wrapper>main>section>.top>.right>.body>.items>.item>.schdule-block>.schdule:nth-child(2)>.label{
     background-color: green;
-  
 }
 
 
-.schdule-block>.schdule>.time{
+.wrapper>main>section>.top>.right>.body>.items>.item>.schdule-block>.schdule>.time{
     font-size:1.8vw;
-    text-align:center;
-    margin-right : 0 !important;
-    
-   
+    width: 100px;
 }
-
-.schdule-block>.schdule>.description{
-    font-size:2vw;
-    text-align:center;
-    width : 100%;
-    margin-right : 0 !important;
+.wrapper>main>section>.top>.right>.body>.items>.item>.schdule-block>.schdule>.description{
+    font-size:1.8vw;
 }
-
 
 
 /* 
@@ -438,8 +466,18 @@ body{
     width : 95%;
     height : 50vh;
     overflow : auto;
+    margin : 10px auto;
     
 }
+
+.wrapper>main>section>.body>.calender>.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+}
+
 .wrapper>main>section>.body>.calender::-webkit-scrollbar{
     display:none;
 }
@@ -453,49 +491,53 @@ body{
     height : 45px;
      
     text-align:center;
-    font-size:.9rem !important;
-    overflow:auto;
+    font-size:1.2rem;
 }
 .wrapper>main>section>.body>.calender td{
-    height:150px;
+    height:250px;
     border-top : 1px solid;
+    overflow:auto;
     
 }
 
+
 .wrapper>main>section>.body>.calender>table .rest-day{
     color : rgb(160, 2, 2);
+    position:relative;    
 }
+
 .wrapper>main>section>.body>.calender>table th{
-    border-top : 1px solid;
- }
- .wrapper>main>section>.body>.calender>table td::after
- {
-     content:'';
-     position:absolute;
-     left:0px;
-     top:0px;
-     width:100%;
-     height:100%;
-     
-     background-color: white;
-     opacity: .1;
-     border : 1px solid;
-     display:block;
- }
- 
- .wrapper>main>section>.body>.calender>table td.rest-day::after{
-     content:'';
-     position:absolute;
-     left:0px;
-     top:0px;
-     width:100%;
-     height:100%;
- 
-     background-color: rgb(160, 2, 2);
-     opacity: .1;
-     border : 1px solid;
-     display:block;
- }
+   border-top : 1px solid;
+}
+.wrapper>main>section>.body>.calender>table td::after
+{
+    content:'';
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    
+    background-color: white;
+    opacity: .1;
+    border : 1px solid;
+    display:block;
+}
+
+.wrapper>main>section>.body>.calender>table td.rest-day::after{
+    content:'';
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+
+    background-color: rgb(160, 2, 2);
+    opacity: .1;
+    border : 1px solid;
+    display:block;
+}
+
 
 
 .wrapper>main>section>.body>.calender>table .d-day{
