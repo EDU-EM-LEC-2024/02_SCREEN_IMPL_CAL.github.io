@@ -46,6 +46,23 @@ if(wedding_date.getDate()<10)
 else
     dayEl.innerHTML = wedding_date.getDate();  
 
+const yoilEl = document.querySelector('.wrapper .curdate>.yoil')
+var yoil = wedding_date.getDay();
+if(yoil==0)
+        yoilEl.innerHTML = '일요일';
+else if(yoil==1)
+        yoilEl.innerHTML = '월요일';
+else if(yoil==2)
+        yoilEl.innerHTML = '화요일';
+else if(yoil==3)
+        yoilEl.innerHTML = '수요일';
+else if(yoil==4)
+        yoilEl.innerHTML = '목요일';
+else if(yoil==5)
+        yoilEl.innerHTML = '금요일';
+else if(yoil==6)
+        yoilEl.innerHTML = '토요일';
+
 
 const wedding_hours = "null";
 let curMonth
@@ -117,71 +134,6 @@ function cal_calender(wedding_date){
     })
 
 
-
-    //monthEl.innerHTML += " <a href='javascript:cal_calender()'><span>"+">"+"</span></a>";
-
-    // //01SECTION 헤더 YYYY/MM/DD 랜더링
-    // const Section01topDateEl = document.querySelector('.wrapper nav>div:nth-child(1)')
-    // Section01topDateEl.innerHTML = calendarYear+" <span style=font-size:1.5rem>/</span> ";
-    // if(calendarMonth<10)
-    // Section01topDateEl.innerHTML += "0"+calendarMonth+" <span style=font-size:1.5rem>/</span> ";
-    // else
-    // Section01topDateEl.innerHTML += calendarMonth+" <span style=font-size:1.5rem>/</span> ";
-
-    // if(d_day<10)
-    // Section01topDateEl.innerHTML += "0"+d_day;
-    // else
-    // Section01topDateEl.innerHTML += d_day;   
-
-
-    // ///01SECTION 헤더 요일 랜더링
-     const yoilEl = document.querySelector('.wrapper .curdate>.yoil')
-     if(yoil==0)
-         yoilEl.innerHTML = '일요일';
-     else if(yoil==1)
-         yoilEl.innerHTML = '월요일';
-     else if(yoil==2)
-         yoilEl.innerHTML = '화요일';
-     else if(yoil==3)
-         yoilEl.innerHTML = '수요일';
-     else if(yoil==4)
-         yoilEl.innerHTML = '목요일';
-     else if(yoil==5)
-         yoilEl.innerHTML = '금요일';
-     else if(yoil==6)
-         yoilEl.innerHTML = '토요일';
-        
-
-    //월 / 일 입력
-    
-
-
-    // const section01HoursEl = document.querySelector('.wrapper>main>section:nth-child(1) .bottom .hours');
-    // section01HoursEl.innerHTML= time;
-
-
-
-        
-
-    //-------------------
-    // TOP-HOURS
-    //-------------------
-    // const topHoursEl = document.querySelector('.wrapper>main>section>.body .top-hours')
-    // if(yoil==0)
-    //     topHoursEl.innerHTML = '일요일 ' +time;
-    // else if(yoil==1)
-    //     topHoursEl.innerHTML = '월요일 ' +time;
-    // else if(yoil==2)
-    //     topHoursEl.innerHTML = '화요일 ' +time;
-    // else if(yoil==3)
-    //     topHoursEl.innerHTML = '수요일 ' +time;
-    // else if(yoil==4)
-    //     topHoursEl.innerHTML = '목요일 ' +time;
-    // else if(yoil==5)
-    //     topHoursEl.innerHTML = '금요일 ' +time;
-    // else if(yoil==6)
-    //     topHoursEl.innerHTML = '토요일 ' +time;
-    
     //-------------------
     // TABLE BODY 
     //-------------------
@@ -210,65 +162,15 @@ function cal_calender(wedding_date){
     //     if(tdEl.innerHTML==d_day)
     //     tdEl.classList.add('d-day');
     // })
-    
-    
-    
-    
+       
 }
+
 cal_calender(wedding_date, wedding_hours);
 
 
 
 
-// // D DAY FUNCTION
-// const dayEls = document.querySelectorAll('.wrapper>main>section:nth-child(4) .bottom .day>span');
-// const hoursEl = document.querySelector('.wrapper>main>section:nth-child(4) .bottom .hours>span');
-// const minEl = document.querySelector('.wrapper>main>section:nth-child(4) .bottom .min>span');
-// const secEl = document.querySelector('.wrapper>main>section:nth-child(4) .bottom .sec>span');
 
-// const d_day_func = (weddingDate)=>{
-
-//     const todayTime = new Date();
-    
-//     const diff = weddingDate - todayTime;
-
-//     let diffDay = Math.floor(diff / (1000*60*60*24));
-//     let diffHour = Math.floor((diff / (1000*60*60)) % 24);
-//     let diffMin = Math.floor((diff / (1000*60)) % 60);
-//     let diffSec = Math.floor(diff / 1000 % 60);
-
-//     console.log("D-DAY표시 :",diffDay,diffHour,diffMin,diffSec);
-//     // D-DAY 랜더링 
-//     dayEls.forEach(dayEl=>{
-//         if(diffDay<10)
-//             dayEl.innerHTML = "0"+diffDay;
-//         else
-//             dayEl.innerHTML = diffDay;
-//     })
-
-
-//     if(diffHour<10)
-//         diffHour="0"+diffHour;
-//     hoursEl.innerHTML = diffHour;
-
-//     if(diffMin<10)
-//         diffMin="0"+diffMin;
-//     minEl.innerHTML = diffMin;
-//     if(diffSec<10)
-//         diffSec="0"+ diffSec;
-    
-//         secEl.innerHTML = diffSec;
-
-
-// }
-
-// DDAY 최초실행
-// d_day_func(wedding_date);
-
-//D Day 반복 비동기
-// setInterval(function(){
-//     d_day_func(wedding_date);
-// },1000)
 
 
 
