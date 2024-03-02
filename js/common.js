@@ -21,22 +21,37 @@ setInterval(()=>{
 
 },1000);
 
-//-----------------------------
-// 위치 확인
-//-----------------------------
-navigator.geolocation.getCurrentPosition((position) => {
-	console.log("position",position)
-});
+// //-----------------------------
+// // 위치 확인
+// //-----------------------------
+// navigator.geolocation.getCurrentPosition((position) => {
+// 	console.log("position",position)
+// });
 
 
 
 
 // 
-const wedding_date = new Date();
-const wedding_hours = "null";
 
+let wedding_date = new Date();
+
+const mEl = document.querySelector('.wrapper .curdate .month')
+if( (wedding_date.getMonth()+1)<10)
+    mEl.innerHTML = "0"+(wedding_date.getMonth()+1);
+else
+    mEl.innerHTML = (wedding_date.getMonth()-1);
+const dayEl = document.querySelector('.wrapper .curdate .day')
+if(wedding_date.getDate()<10)
+    dayEl.innerHTML = "0"+wedding_date.getDate();
+else
+    dayEl.innerHTML = wedding_date.getDate();  
+
+
+const wedding_hours = "null";
+let curMonth
 // CALENDAR FUNCTION 
-const cal_calender = (wedding_date,time)=>{
+
+function cal_calender(wedding_date){
    
     var d_day = wedding_date.getDate();
     var yoil = wedding_date.getDay();
@@ -59,8 +74,51 @@ const cal_calender = (wedding_date,time)=>{
 
 
     //달력에 월 넣기
+    curMonth = calendarMonth;
+    const prevDate = new Date(calendarYear,wedding_date.getMonth()-1,wedding_date.getDate());
+    const nextDate = new Date(calendarYear,wedding_date.getMonth()+1,wedding_date.getDate());
+
     const monthEl = document.querySelector('.calmonth');
-    monthEl.innerHTML = calendarMonth+"월";
+    while(monthEl.firstChild){
+        monthEl.removeChild(monthEl.firstChild);
+    }
+    const tds = document.querySelectorAll('td')
+    tds.forEach(td=>{
+        td.innerHTML="";
+    })
+
+    //prev
+    const prevAtg = document.createElement("a");
+    prevAtg.setAttribute('style','cursor:pointer')
+    const prevSpan = document.createElement('span');
+    prevSpan.innerHTML = "<";
+    prevAtg.appendChild(prevSpan);
+    monthEl.appendChild(prevAtg);    
+    prevAtg.addEventListener('click',function(){
+        cal_calender(prevDate);
+    })
+    //centerd
+    const centerspan = document.createElement('span');
+    if(calendarMonth<10)
+        calendarMonth="0"+calendarMonth;    
+    if(calendarToday<10)
+        calendarToday="0"+calendarToday;
+    centerspan.innerHTML = " "+calendarYear+"년 "+calendarMonth+"월 ";
+    monthEl.appendChild(centerspan); 
+    //next
+    const nextAtg = document.createElement("a");
+    nextAtg.setAttribute('style','cursor:pointer')
+    const nextSpan = document.createElement('span');
+    nextSpan.innerHTML = ">";
+    nextAtg.appendChild(nextSpan);
+    monthEl.appendChild(nextAtg);    
+    nextAtg.addEventListener('click',function(){
+        cal_calender(nextDate);
+    })
+
+
+
+    //monthEl.innerHTML += " <a href='javascript:cal_calender()'><span>"+">"+"</span></a>";
 
     // //01SECTION 헤더 YYYY/MM/DD 랜더링
     // const Section01topDateEl = document.querySelector('.wrapper nav>div:nth-child(1)')
@@ -79,57 +137,29 @@ const cal_calender = (wedding_date,time)=>{
     // ///01SECTION 헤더 요일 랜더링
      const yoilEl = document.querySelector('.wrapper .curdate>.yoil')
      if(yoil==0)
-         yoilEl.innerHTML = 'SUNDAY';
+         yoilEl.innerHTML = '일요일';
      else if(yoil==1)
-         yoilEl.innerHTML = 'MONDAY';
+         yoilEl.innerHTML = '월요일';
      else if(yoil==2)
-         yoilEl.innerHTML = 'TUESDAY';
+         yoilEl.innerHTML = '화요일';
      else if(yoil==3)
-         yoilEl.innerHTML = 'WEDNESDAY';
+         yoilEl.innerHTML = '수요일';
      else if(yoil==4)
-         yoilEl.innerHTML = 'THURSDAY';
+         yoilEl.innerHTML = '목요일';
      else if(yoil==5)
-         yoilEl.innerHTML = 'FRIDAY';
+         yoilEl.innerHTML = '금요일';
      else if(yoil==6)
-         yoilEl.innerHTML = 'SATURDAY';
+         yoilEl.innerHTML = '토요일';
         
 
     //월 / 일 입력
     
-    
-    const mEl = document.querySelector('.wrapper .curdate .month')
-    if(calendarMonth<10)
-        mEl.innerHTML = "0"+calendarMonth;
-    else
-        mEl.innerHTML = calendarMonth;
 
-    const dayEl = document.querySelector('.wrapper .curdate .day')
-    if(d_day<10)
-        dayEl.innerHTML = "0"+d_day;
-    else
-        dayEl.innerHTML = d_day;  
 
     // const section01HoursEl = document.querySelector('.wrapper>main>section:nth-child(1) .bottom .hours');
     // section01HoursEl.innerHTML= time;
 
 
-    //화면에 달력 랜더링
-
-
-    //-------------------
-    // TOP-DATE 
-    //-------------------
-    // const topDateEl = document.querySelector('.wrapper>main>section>.body .top-date')
-    // topDateEl.innerHTML = calendarYear+".";
-    // if(calendarMonth<10)
-    //     topDateEl.innerHTML += "0"+calendarMonth+".";
-    // else
-    //     topDateEl.innerHTML += calendarMonth+".";
-
-    // if(d_day<10)
-    //     topDateEl.innerHTML += "0"+d_day;
-    // else
-    //     topDateEl.innerHTML += d_day;
 
         
 
@@ -162,7 +192,7 @@ const cal_calender = (wedding_date,time)=>{
        const start_no =  tdEl.getAttribute('data-start');
         if(start_no>=calendarMonthStartDay)
             tdEl.innerHTML= "<span style=position:absolute;left:10px;top:10px;>"+(day++)+"<span>"
-    })
+        })
         //EtcRow
         const tdEtcEls =  document.querySelectorAll(".wrapper>main>section>.body table td.days");
         tdEtcEls.forEach(tdEl=>{    
@@ -185,7 +215,6 @@ const cal_calender = (wedding_date,time)=>{
     
     
 }
-
 cal_calender(wedding_date, wedding_hours);
 
 
